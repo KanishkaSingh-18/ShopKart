@@ -153,21 +153,22 @@ In the current development setup, the frontend uses port `5177` and the backend 
 
 ## Application Routes
 
-| Route | Purpose |
-|---|---|
-| `/` | Landing page |
-| `/login` | Customer login |
-| `/signup` | Customer registration |
-| `/home` | Customer home page |
-| `/products` | Product catalog |
-| `/products/:id` | Product details |
-| `/wishlist` | Saved products |
-| `/cart` | Shopping cart |
-| `/checkout` | Checkout and payment |
-| `/orders` | Order history |
-| `/orders/:id` | Order details |
+| Route | Access | Description |
+|---|---|---|
+| `/` | Redirect | Redirects users based on authentication status |
+| `/login` | Public | Customer login |
+| `/signup` | Public | Customer registration |
+| `/home` | Protected | Customer home page |
+| `/products` | Protected | Browse the product catalog |
+| `/products/:id` | Protected | View product details |
+| `/wishlist` | Protected | Manage saved products |
+| `/cart` | Protected | Manage shopping cart |
+| `/checkout` | Protected | Proceed to checkout and payment |
+| `/order-success/:id` | Protected | View order success page |
+| `/orders` | Protected | View order history |
+| `/orders/:id` | Protected | View individual order details |
 
-Protected pages require customer authentication.
+**Route protection:** `PublicRoute` handles the login and signup pages, while `ProtectedRoute` restricts the shopping and order pages to authenticated customers.
 
 ## Learning Outcomes
 
